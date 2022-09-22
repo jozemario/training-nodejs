@@ -1,5 +1,5 @@
-# Training NextJS
-NextJS Design Patterns and Module Federation
+# Training NodeJS
+NodeJS Design Patterns and Module Federation
 
 
 <details><summary>Project Structure</summary>
