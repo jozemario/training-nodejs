@@ -1,7 +1,7 @@
 import React from 'react';
-// import { People } from './pages/People';
-// import BasicSWR from './pages/BasicSWR';
-// import InfiniteSWR from './pages/InfiniteSWR';
+import { People } from './pages/People';
+import BasicSWR from './pages/BasicSWR';
+import InfiniteSWR from './pages/InfiniteSWR';
 
 const RemoteContent = React.lazy(() => import('remote2/Nav'));
 const Image = React.lazy(() => import('remote2/Image'));
@@ -32,13 +32,16 @@ export default () => {
                 <Header />
             </React.Suspense>
 
-            {/* <div onClick={() => alert('shell is interactive')}>
-                <h1>Module Federation Example: Server Side Rendering</h1>
-                <h2>This is the shell application.</h2>
+            <div
+                onClick={() => alert('shell is interactive')}
+                className="mt-10 text-3xl mx-auto max-w-6xl"
+            >
+                <div>Module Federation Example: Server Side Rendering</div>
+                <div>This is the shell application.</div>
+                <People />
+                <BasicSWR />
+                <InfiniteSWR />
             </div>
-            <People />
-            <BasicSWR />
-            <InfiniteSWR /> */}
         </>
     );
 };
