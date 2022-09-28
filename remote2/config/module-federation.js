@@ -12,6 +12,7 @@ module.exports = {
             './Button': './src/Button',
             './Nav': './src/Nav',
             './Notification': './src/Notification',
+            './Header': './src/Header',
         },
         shared: {
             ...deps,
@@ -38,6 +39,7 @@ module.exports = {
                 './Button': './src/Button',
                 './Nav': './src/Nav',
                 './Notification': './src/Notification',
+                './Header': './src/Header',
             },
             shared: {
                 ...deps,

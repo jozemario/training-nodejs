@@ -4,6 +4,8 @@ import React from 'react';
 // import InfiniteSWR from './pages/InfiniteSWR';
 
 const RemoteContent = React.lazy(() => import('remote2/Nav'));
+const Image = React.lazy(() => import('remote2/Image'));
+const Header = React.lazy(() => import('remote2/Header'));
 
 export default () => {
     return (
@@ -17,6 +19,19 @@ export default () => {
             <React.Suspense fallback={<h1>Loading....</h1>}>
                 <RemoteContent />
             </React.Suspense>
+
+            <React.Suspense fallback={<h1>Loading....</h1>}>
+                <Image
+                    imgSrc={
+                        'https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1019204/retina_500x200_image_0-1967657e3078be54d78ccc4d57eae106-f763757d0bd43e58ff9976083b458547.png'
+                    }
+                />
+            </React.Suspense>
+
+            <React.Suspense fallback={<h1>Loading....</h1>}>
+                <Header />
+            </React.Suspense>
+
             {/* <div onClick={() => alert('shell is interactive')}>
                 <h1>Module Federation Example: Server Side Rendering</h1>
                 <h2>This is the shell application.</h2>
@@ -27,3 +42,4 @@ export default () => {
         </>
     );
 };
+

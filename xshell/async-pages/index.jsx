@@ -3,12 +3,12 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { StoreProvider, useStore } from 'store/store';
 
-const Header = dynamic(() => import('remote2/Image'), {
+const Header = dynamic(() => import('remote2/Header'), {
     ssr: false,
 });
 
 const Home = () => {
-    const { count, increment } = useStore();
+    const { count, increment, clear } = useStore();
     return (
         <>
             <div className="mt-10 text-3xl mx-auto max-w-6xl">
@@ -17,9 +17,9 @@ const Home = () => {
                 <div>Language: JavaScript</div>
                 <div>CSS: Tailwind</div>
             </div>
-            <Header />
+            <Header count={count} clear={clear} />
             <div className="layout">
-                <h2>Redux State</h2>
+                <h2>Redux State in xshell</h2>
                 <div>Count: {count}</div>
                 <div>
                     <button
