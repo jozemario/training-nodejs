@@ -1,13 +1,12 @@
 import dynamic from 'next/dynamic';
 const Page = dynamic(
     async () => {
-        return import('../async-pages/index');
+        return import('../async-pages/content');
     },
     {
         ssr: false,
     }
 );
-
-export default function Home() {
+export default function Content() {
     return <Page />;
 }

@@ -6,6 +6,7 @@ export const counterSlice = createSlice({
     name: 'counter',
     initialState: {
         count: 0,
+        imgSrc: 'https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/8567/thumb_code_write_brackets_hand_open_720.jpg',
     },
     reducers: {
         increment: (state) => {
@@ -27,8 +28,10 @@ const store = configureStore({
 
 export function useStore() {
     const count = useSelector((state) => state.counter.count);
+    const imgSrc = useSelector((state) => state.counter.imgSrc);
     const dispatch = useDispatch();
     return {
+        imgSrc,
         count,
         increment: () => dispatch(increment()),
         clear: () => dispatch(clear()),

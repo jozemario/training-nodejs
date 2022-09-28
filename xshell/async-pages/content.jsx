@@ -1,17 +1,20 @@
-// import Button from '../components/Button';
 import dynamic from 'next/dynamic';
 const RemoteContent = dynamic(() => import('remote1/Content'), {
     ssr: false,
 });
-
 export default function Home() {
     return (
-        <div style={{ padding: '2%' }}>
-            <h1>Next JS and React</h1>
-            {/* <h2>Host - Button</h2>
-      <Button />*/}
-            <h2>Client - Button</h2>
-            <RemoteContent />
-        </div>
+        <>
+            <div className="flex mt-10 text-3xl mx-auto max-w-6xl">
+                <div>Name: xshell</div>
+                <div>Framework: Next JS + React + Redux</div>
+                <div>Language: JavaScript</div>
+                <div>CSS: Tailwind</div>
+            </div>
+            <div className="layout">
+                <h2>Remote Content</h2>
+                <RemoteContent />
+            </div>
+        </>
     );
 }

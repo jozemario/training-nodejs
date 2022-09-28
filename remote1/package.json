@@ -21,6 +21,8 @@
         "@module-federation/node": "^0.1.0",
         "babel-loader": "^8.2.2",
         "html-webpack-plugin": "^5.5.0",
+        "node-sass": "^7.0.3",
+        "sass-loader": "^13.0.2",
         "webpack": "^5.57.1",
         "webpack-cli": "^4.9.0",
         "webpack-dev-server": "^4.3.1",
@@ -28,8 +30,8 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.13.10",
+        "node-fetch": "^2.6.7",
         "react": "^18.1.0",
-        "react-dom": "^18.1.0",
-        "node-fetch": "^2.6.7"
+        "react-dom": "^18.1.0"
     }
 }
