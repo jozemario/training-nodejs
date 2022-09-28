@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToPipeableStream } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
-import App from '../src/components/App';
+import App from '../src/App';
 
 export default async (req, res, next) => {
   const helmet = Helmet.renderStatic();

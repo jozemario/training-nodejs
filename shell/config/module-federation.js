@@ -4,29 +4,35 @@ const { NodeFederationPlugin, StreamingTargetPlugin } = require("@module-federat
 
 module.exports = {
     client: new ModuleFederationPlugin({
-        name: "shell",
-        filename: "container.js",
+        name: 'shell',
+        filename: 'container.js',
         remotes: {
-            remote1: "remote1@http://localhost:3001/client/remoteEntry.js",            
+            remote1: 'remote1@http://localhost:3001/client/remoteEntry.js',
+            remote2: 'remote2@http://localhost:3002/client/remoteEntry.js',
+            store: 'store@http://localhost:3003/client/remoteEntry.js',
         },
-        shared: [{ "react": deps.react, "react-dom": deps["react-dom"] }],
+        shared: [{ react: deps.react, 'react-dom': deps['react-dom'] }],
     }),
     server: [
         new NodeFederationPlugin({
-            name: "shell",
-            library: { type: "commonjs-module" },
-            filename: "remoteEntry.js",
+            name: 'shell',
+            library: { type: 'commonjs-module' },
+            filename: 'remoteEntry.js',
             remotes: {
-                remote1: "remote1@http://localhost:3001/server/remoteEntry.js"
+                remote1: 'remote1@http://localhost:3001/server/remoteEntry.js',
+                remote2: 'remote2@http://localhost:3002/server/remoteEntry.js',
+                store: 'store@http://localhost:3003/server/remoteEntry.js',
             },
-            shared: [{ "react": deps.react, "react-dom": deps["react-dom"] }],
+            shared: [{ react: deps.react, 'react-dom': deps['react-dom'] }],
         }),
         new StreamingTargetPlugin({
-            name: "shell",
-            library: { type: "commonjs-module" },            
+            name: 'shell',
+            library: { type: 'commonjs-module' },
             remotes: {
-                remote1: "remote1@http://localhost:3001/server/remoteEntry.js"
+                remote1: 'remote1@http://localhost:3001/server/remoteEntry.js',
+                remote2: 'remote2@http://localhost:3002/server/remoteEntry.js',
+                store: 'store@http://localhost:3003/server/remoteEntry.js',
             },
         }),
-    ]
-}
+    ],
+};

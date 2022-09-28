@@ -1,17 +1,17 @@
-const deps = require("../package.json").dependencies;
-const { ModuleFederationPlugin } = require("webpack").container;
-const { NodeFederationPlugin, StreamingTargetPlugin } = require("@module-federation/node");
+const deps = require('../package.json').dependencies;
+const { ModuleFederationPlugin } = require('webpack').container;
+const {
+    NodeFederationPlugin,
+    StreamingTargetPlugin,
+} = require('@module-federation/node');
 
 module.exports = {
     client: new ModuleFederationPlugin({
-        name: 'remote2',
+        name: 'store',
         filename: 'remoteEntry.js',
-        remotes: { store: 'store@http://localhost:3003/client/remoteEntry.js' },
+        remotes: {},
         exposes: {
-            './Image': './src/Image',
-            './Button': './src/Button',
-            './Nav': './src/Nav',
-            './Notification': './src/Notification',
+            './store': './src/store',
         },
         shared: {
             ...deps,
@@ -27,17 +27,12 @@ module.exports = {
     }),
     server: [
         new NodeFederationPlugin({
-            name: 'remote2',
+            name: 'store',
             filename: 'remoteEntry.js',
             library: { type: 'commonjs-module' },
-            remotes: {
-                store: 'store@http://localhost:3003/server/remoteEntry.js',
-            },
+            remotes: {},
             exposes: {
-                './Image': './src/Image',
-                './Button': './src/Button',
-                './Nav': './src/Nav',
-                './Notification': './src/Notification',
+                './store': './src/store',
             },
             shared: {
                 ...deps,
@@ -52,11 +47,9 @@ module.exports = {
             },
         }),
         new StreamingTargetPlugin({
-            name: 'remote2',
+            name: 'store',
             library: { type: 'commonjs-module' },
-            remotes: {
-                store: 'store@http://localhost:3003/server/remoteEntry.js',
-            },
+            remotes: {},
         }),
     ],
 };
