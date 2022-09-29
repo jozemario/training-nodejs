@@ -8,6 +8,8 @@ const Page = dynamic(
     }
 );
 
+const IndexPage = () => <Page />;
+
 export default function Home() {
-    return <Page />;
+    return <IndexPage />;
 }

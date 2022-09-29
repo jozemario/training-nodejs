@@ -18,7 +18,7 @@ const paths = {
 
 module.exports = {
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '.json', 'css', 'scss'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     },
     module: {
         rules: [
@@ -36,32 +36,32 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
-            {
-                // look for .css or .scss files.
-                test: /\.(css|scss)$/,
-                // in the `src` directory
-                include: [path.resolve(paths.appSrc)],
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                discardDuplicates: true,
-                                sourceMap: false,
-                                // This enables local scoped CSS based in CSS Modules spec
-                                modules: true,
-                                // generates unique name for each class (e.g. app__app___2x3cr)
-                                localIdentName:
-                                    '[name]__[local]___[hash:base64:5]',
-                            },
-                        },
-                        {
-                            loader: 'sass-loader',
-                        },
-                    ],
-                }),
-            },
+            // {
+            //     // look for .css or .scss files.
+            //     test: /\.(css|scss)$/,
+            //     // in the `src` directory
+            //     include: [path.resolve(paths.appSrc)],
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: [
+            //             {
+            //                 loader: 'css-loader',
+            //                 options: {
+            //                     discardDuplicates: true,
+            //                     sourceMap: false,
+            //                     // This enables local scoped CSS based in CSS Modules spec
+            //                     modules: true,
+            //                     // generates unique name for each class (e.g. app__app___2x3cr)
+            //                     localIdentName:
+            //                         '[name]__[local]___[hash:base64:5]',
+            //                 },
+            //             },
+            //             {
+            //                 loader: 'sass-loader',
+            //             },
+            //         ],
+            //     }),
+            // },
         ],
     },
 };
