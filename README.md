@@ -7,7 +7,6 @@ NodeJS Design Patterns and Module Federation
 <p>
 
 ![Alt text](./architecture.dio.svg)
-<img src="./architecture.dio.svg">
 
 #### Ecosystem:
 ```
