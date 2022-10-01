@@ -17,6 +17,19 @@ import { BsPerson } from 'react-icons/bs';
 const Header = dynamic(() => import('remote2/Header'), {
     ssr: false,
 });
+const HeaderRemote1 = dynamic(() => import('remote1/Header'), {
+    ssr: false,
+});
+
+const PublicLayout = dynamic(() => import('remote1/PublicLayout'), {
+    ssr: false,
+});
+const PrivateLayout = dynamic(() => import('remote1/PublicLayout'), {
+    ssr: false,
+});
+const AdminLayout = dynamic(() => import('remote1/PublicLayout'), {
+    ssr: false,
+});
 
 const Left = (counters) => {
     console.log('counters:', counters);
@@ -44,29 +57,42 @@ const Right = ({ count, increment, clear }) => (
         </div>
     </>
 );
+const layouts = {
+    public: <PublicLayout />,
+    private: <PrivateLayout />,
+    admin: <AdminLayout />,
+};
+const headers = {
+    headerNavbar: <HeaderNavbar />,
+    loginNavbar: <LoginNavbar />,
+    headerRemote1: <HeaderRemote1 />,
+    headerRemote2: <Header />,
+};
 const Home = () => {
     const { count, increment, clear } = useStore();
     return (
-        // <Layout title={'xshell'}>
-        //     <Header state={(count, increment, clear)} />
-        // </Layout>
-        <BaseLayout
-            sidebar={<HeaderNavbar />}
-            navbar={<LoginNavbar />}
-            left={
-                <Left
-                    counters={[
-                        {
-                            title: 'Clicks',
-                            stat: count,
-                            icon: <BsPerson size={'3em'} />,
-                        },
-                    ]}
-                />
-            }
-            right={<Right count={count} increment={increment} clear={clear} />}
-            footer={<MainFooter />}
-        ></BaseLayout>
+        <Layout title={'xshell'}>
+            {layouts.public}
+            {/* <Header state={(count, increment, clear)} /> */}
+            {/* <PublicLayout /> */}
+        </Layout>
+        // <BaseLayout
+        //     sidebar={<HeaderNavbar />}
+        //     navbar={<LoginNavbar />}
+        //     left={
+        //         <Left
+        //             counters={[
+        //                 {
+        //                     title: 'Clicks',
+        //                     stat: count,
+        //                     icon: <BsPerson size={'3em'} />,
+        //                 },
+        //             ]}
+        //         />
+        //     }
+        //     right={<Right count={count} increment={increment} clear={clear} />}
+        //     footer={<MainFooter />}
+        // ></BaseLayout>
     );
 };
 

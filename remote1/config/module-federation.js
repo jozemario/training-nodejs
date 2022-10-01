@@ -13,6 +13,9 @@ module.exports = {
         exposes: {
             './Content': './src/Content',
             './Header': './src/Header',
+            './PublicLayout': './src/PublicLayout',
+            './AdminLayout': './src/AdminLayout',
+            './PrivateLayout': './src/PrivateLayout',
         },
         shared: {
             ...deps,
@@ -48,6 +51,9 @@ module.exports = {
             exposes: {
                 './Content': './src/Content',
                 './Header': './src/Header',
+                './PublicLayout': './src/PublicLayout',
+                './AdminLayout': './src/AdminLayout',
+                './PrivateLayout': './src/PrivateLayout',
             },
             shared: {
                 ...deps,

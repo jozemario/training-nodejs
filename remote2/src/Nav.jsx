@@ -3,7 +3,8 @@ export default () => {
     return (
         <nav className="flex sm:justify-center space-x-4">
             {[
-                ['Home', '/dashboard'],
+                ['Home', '/'],
+                ['Content', '/content'],
                 ['Team', '/team'],
                 ['Projects', '/projects'],
                 ['Reports', '/reports'],

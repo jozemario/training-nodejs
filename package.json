@@ -13,8 +13,7 @@
     ],
     "scripts": {
         "build": "yarn workspaces run build",
-        "start": "yarn workspaces run start",
-        "start2": "concurrently \"cd store; yarn start\"  \"cd remote1; yarn start\"  \"cd remote2; yarn start\"  \"cd xshell; yarn dev\""
+        "start": "concurrently \"cd store; yarn start\"  \"cd remote1; yarn start\"  \"cd remote2; yarn start\"  \"cd xshell; yarn dev\""
     },
     "dependencies": {
         "concurrently": "^7.0.0"
