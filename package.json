@@ -1,18 +1,22 @@
 {
     "name": "@server-side-rendering/react-18-suspense-mf",
     "version": "1.0.0",
-    "description": "Example of server side rendering with module federation using React 18 and Suspense and Nextjs - redux",
+    "description": "Example of server side rendering with module federation using React 18 and Suspense, NextJS, Redux RTK",
     "author": "JozeMario <josezero1@gmail.com>",
     "license": "GNU",
     "private": true,
     "workspaces": [
+        "store",
         "remote1",
         "remote2",
-        "shell",
-        "xshell",
-        "store"
+        "xshell"
     ],
     "scripts": {
-        "build": "yarn workspaces run build"
+        "build": "yarn workspaces run build",
+        "start": "yarn workspaces run start",
+        "start2": "concurrently \"cd store; yarn start\"  \"cd remote1; yarn start\"  \"cd remote2; yarn start\"  \"cd xshell; yarn dev\""
+    },
+    "dependencies": {
+        "concurrently": "^7.0.0"
     }
 }
