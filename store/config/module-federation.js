@@ -17,12 +17,22 @@ module.exports = {
             ...deps,
             react: {
                 singleton: true,
-                requiredVersion: deps.react,
+                version: '0',
+                requiredVersion: false,
             },
             'react-dom': {
+                requiredVersion: false,
                 singleton: true,
-                requiredVersion: deps['react-dom'],
+                version: '0',
             },
+            // react: {
+            //     singleton: true,
+            //     requiredVersion: deps.react,
+            // },
+            // 'react-dom': {
+            //     singleton: true,
+            //     requiredVersion: deps['react-dom'],
+            // },
         },
     }),
     server: [
@@ -38,12 +48,22 @@ module.exports = {
                 ...deps,
                 react: {
                     singleton: true,
-                    requiredVersion: deps.react,
+                    version: '0',
+                    requiredVersion: false,
                 },
                 'react-dom': {
+                    requiredVersion: false,
                     singleton: true,
-                    requiredVersion: deps['react-dom'],
+                    version: '0',
                 },
+                // react: {
+                //     singleton: true,
+                //     requiredVersion: deps.react,
+                // },
+                // 'react-dom': {
+                //     singleton: true,
+                //     requiredVersion: deps['react-dom'],
+                // },
             },
         }),
         new StreamingTargetPlugin({

@@ -16,13 +16,23 @@ module.exports = {
         },
         shared: {
             ...deps,
+            // react: {
+            //     singleton: true,
+            //     requiredVersion: deps.react,
+            // },
+            // 'react-dom': {
+            //     singleton: true,
+            //     requiredVersion: deps['react-dom'],
+            // },
             react: {
                 singleton: true,
-                requiredVersion: deps.react,
+                version: '0',
+                requiredVersion: false,
             },
             'react-dom': {
+                requiredVersion: false,
                 singleton: true,
-                requiredVersion: deps['react-dom'],
+                version: '0',
             },
         },
     }),
@@ -41,13 +51,23 @@ module.exports = {
             },
             shared: {
                 ...deps,
+                // react: {
+                //     singleton: true,
+                //     requiredVersion: deps.react,
+                // },
+                // 'react-dom': {
+                //     singleton: true,
+                //     requiredVersion: deps['react-dom'],
+                // },
                 react: {
                     singleton: true,
-                    requiredVersion: deps.react,
+                    version: '0',
+                    requiredVersion: false,
                 },
                 'react-dom': {
+                    requiredVersion: false,
                     singleton: true,
-                    requiredVersion: deps['react-dom'],
+                    version: '0',
                 },
             },
         }),

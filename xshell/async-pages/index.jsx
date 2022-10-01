@@ -4,15 +4,20 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { StoreProvider, useStore } from 'store/store';
 import BaseLayout from '../components/layouts/base-layout';
+import Layout from '../components/layouts/page-layout';
 import MainFooter from '../components/elements/footers/main-footer';
 import { LoginNavbar } from '../components/elements/navbars/login-navbar';
 import { HeaderNavbar } from '../components/elements/navbars/header-navbar';
 import BasicCounters from '../components/elements/elements/counters/basic-counters';
 import { BsPerson } from 'react-icons/bs';
 
+// const HeaderNavbar = dynamic(() => import('remote2/Header'), {
+//     ssr: false,
+// });
 const Header = dynamic(() => import('remote2/Header'), {
     ssr: false,
 });
+
 const Left = (counters) => {
     console.log('counters:', counters);
     return <BasicCounters counters={counters} />;
@@ -42,6 +47,9 @@ const Right = ({ count, increment, clear }) => (
 const Home = () => {
     const { count, increment, clear } = useStore();
     return (
+        // <Layout title={'xshell'}>
+        //     <Header state={(count, increment, clear)} />
+        // </Layout>
         <BaseLayout
             sidebar={<HeaderNavbar />}
             navbar={<LoginNavbar />}
