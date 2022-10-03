@@ -48,7 +48,7 @@ function CountersCard(props: CountersCardProps) {
     );
 }
 
-export default function BasicCounters({ counters }) {
+export default function BasicCounters({ label, counters }) {
     return (
         <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
             <chakra.h1
@@ -57,7 +57,7 @@ export default function BasicCounters({ counters }) {
                 py={10}
                 fontWeight={'bold'}
             >
-                Our company is expanding, you could be too.
+                {label}
             </chakra.h1>
             <SimpleGrid
                 columns={{ base: 1, md: 1 }}

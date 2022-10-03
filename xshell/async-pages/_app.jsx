@@ -1,10 +1,4 @@
-import { StoreProvider, useStore } from 'store/store';
-
 function MyApp({ Component, pageProps }) {
-    return (
-        <StoreProvider>
-            <Component {...pageProps} />
-        </StoreProvider>
-    );
+    return <Component {...pageProps} />;
 }
 export default MyApp;

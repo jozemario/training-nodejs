@@ -24,16 +24,21 @@ const HeaderRemote1 = dynamic(() => import('remote1/Header'), {
 const PublicLayout = dynamic(() => import('remote1/PublicLayout'), {
     ssr: false,
 });
-const PrivateLayout = dynamic(() => import('remote1/PublicLayout'), {
+const PrivateLayout = dynamic(() => import('remote1/PrivateLayout'), {
     ssr: false,
 });
-const AdminLayout = dynamic(() => import('remote1/PublicLayout'), {
+const AdminLayout = dynamic(() => import('remote1/AdminLayout'), {
     ssr: false,
 });
 
 const Left = (counters) => {
     console.log('counters:', counters);
-    return <BasicCounters counters={counters} />;
+    return (
+        <BasicCounters
+            label={'Our company is expanding, you could be too.'}
+            counters={counters}
+        />
+    );
 };
 const Right = ({ count, increment, clear }) => (
     <>
