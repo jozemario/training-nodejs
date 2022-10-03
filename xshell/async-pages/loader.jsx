@@ -1,0 +1,38 @@
+import dynamic from 'next/dynamic';
+import Layout from '../components/layouts/page-layout';
+import { StoreProvider, useStore } from 'store/store';
+
+const PublicLayout = dynamic(() => import('remote1/PublicLayout'), {
+    ssr: false,
+});
+const PrivateLayout = dynamic(() => import('remote1/PrivateLayout'), {
+    ssr: false,
+});
+const AdminLayout = dynamic(() => import('remote1/AdminLayout'), {
+    ssr: false,
+});
+
+const layouts = {
+    public: <PublicLayout />,
+    private: <PrivateLayout />,
+    admin: <AdminLayout />,
+};
+
+const Page = (path) => {
+    const { count, increment, clear } = useStore();
+    return (
+        <Layout title={path} backRoute="/">
+            {layouts.private}
+        </Layout>
+    );
+};
+
+const Wrapper = (path) => {
+    return (
+        <StoreProvider>
+            <Page path={path} />
+        </StoreProvider>
+    );
+};
+
+export default Wrapper;

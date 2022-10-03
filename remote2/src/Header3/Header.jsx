@@ -7,7 +7,7 @@ const CTA = 'Get Started';
 
 export default function Header(state) {
     console.log('Header State:', state);
-    const data = state.state;
+    const data = state;
     return (
         <chakra.header id="header">
             <Flex w="100%" px="6" py="5" align="center" justify="space-between">

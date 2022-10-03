@@ -50,6 +50,7 @@ module.exports = {
                 './Nav': './src/Nav',
                 './Notification': './src/Notification',
                 './Header': './src/Header',
+                './Header2': './src/Header2',
             },
             shared: {
                 ...deps,

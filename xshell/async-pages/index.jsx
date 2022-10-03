@@ -3,8 +3,9 @@ import Image from 'next/image';
 
 import dynamic from 'next/dynamic';
 import { StoreProvider, useStore } from 'store/store';
-import BaseLayout from '../components/layouts/base-layout';
+
 import Layout from '../components/layouts/page-layout';
+import BaseLayout from '../components/layouts/base-layout';
 import MainFooter from '../components/elements/footers/main-footer';
 import { LoginNavbar } from '../components/elements/navbars/login-navbar';
 import { HeaderNavbar } from '../components/elements/navbars/header-navbar';
@@ -74,12 +75,12 @@ const headers = {
     headerRemote2: <Header />,
 };
 const Home = () => {
-    const { count, increment, clear } = useStore();
+    const { count, increment, clear, menuItems } = useStore();
     return (
         <Layout title={'xshell'}>
-            {layouts.public}
+            {/* {layouts.public} */}
             {/* <Header state={(count, increment, clear)} /> */}
-            {/* <PublicLayout /> */}
+            <PublicLayout state={menuItems} />
         </Layout>
         // <BaseLayout
         //     sidebar={<HeaderNavbar />}
