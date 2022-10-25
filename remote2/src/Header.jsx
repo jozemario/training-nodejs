@@ -14,7 +14,7 @@ export default function Header(state) {
                 // Logo
                 <Image
                     src={
-                        'http://localhost:3000/favicon/android-chrome-512x512.png'
+                        'http://localhost:3000/favicon/android-chrome-256x256.png'
                     }
                     h="50px"
                 />

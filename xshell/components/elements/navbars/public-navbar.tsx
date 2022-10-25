@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
                     Home
                 </a>
             </Link>
-            <style jsx>{`
+            {/* <style jsx>{`
                 .bold {
                     font-weight: bold;
                 }
@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
                 a + a {
                     margin-left: 1rem;
                 }
-            `}</style>
+            `}</style> */}
         </div>
     );
 
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
                 </a>
             </Link>
             {/*<button onClick={() => signIn()}>Sign in</button>*/}
-            <style jsx>{`
+            {/* <style jsx>{`
                 .bold {
                     font-weight: bold;
                 }
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                     padding: 0.5rem 1rem;
                     border-radius: 3px;
                 }
-            `}</style>
+            `}</style> */}
         </div>
     );
 
@@ -69,13 +69,13 @@ const Navbar: React.FC = () => {
         <nav>
             {left}
             {right}
-            <style jsx>{`
+            {/* <style jsx>{`
                 nav {
                     display: flex;
                     padding: 2rem;
                     align-items: center;
                 }
-            `}</style>
+            `}</style> */}
         </nav>
     );
 };
