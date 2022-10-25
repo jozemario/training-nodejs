@@ -11,6 +11,7 @@ import {
 } from 'store/store';
 import UserCard from './components/UserCard';
 import Textbox from './components/Textbox';
+import Nav from './components/Nav';
 
 const Wrapper = () => {
     const { imgSrc, sales, salesActions } = useStore();
@@ -26,6 +27,7 @@ const Wrapper = () => {
     console.log('salesData:', sales, salesActions);
     return (
         <>
+            <Nav />
             <div className="flex supports-[display:grid]:grid">
                 <div className="mt-10 text-3xl mx-auto max-w-6xl">
                     <div>Name: saleApp</div>
