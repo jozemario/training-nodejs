@@ -14,7 +14,7 @@ import MainLayout from './components/layouts/MainLayout';
 
 const Wrapper = () => {
     const { imgSrc, sales, salesActions } = useStore();
-    console.log('imgSrc:', imgSrc);
+    //console.log('imgSrc:', imgSrc);
     console.log('salesData:', sales, salesActions);
 
     return (

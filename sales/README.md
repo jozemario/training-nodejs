@@ -1,7 +1,7 @@
 # Training ReactJS SalesApp
 ReactJS Sales and Invoicing
 * Vendors, Customers, Products
-* Create Invoices
+* Create Orders, Invoices
 * Export to PDF
 
 

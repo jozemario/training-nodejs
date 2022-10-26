@@ -6,7 +6,7 @@ export default () => {
             {[
                 ['Home', '/client'],
                 ['Sales', '/client/dashboard'],
-                ['Contact', '/client/contact'],
+                ['About', '/client/about'],
             ].map(([title, url]) => (
                 <Link
                     id="title"

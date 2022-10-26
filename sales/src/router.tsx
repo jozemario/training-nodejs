@@ -25,15 +25,22 @@ export const routes: Route[] = [
             ),
     },
     {
-        path: 'client/products/',
+        path: 'client/products',
         children: [
             {
-                path: ':id',
+                path: '/',
                 import: () =>
                     import('./screens/sales/products/productsModule').then(
                         (module) => module.default
                     ),
             },
+            // {
+            //     path: ':id',
+            //     import: () =>
+            //         import('./screens/sales/products/productsModule').then(
+            //             (module) => module.default
+            //         ),
+            // },
         ],
     },
     // {
