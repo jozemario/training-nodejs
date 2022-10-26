@@ -8,15 +8,15 @@ export default () => (
             </h2>
             <div className="overflow-x-auto">
                 <table className="w-full p-6 text-xs text-left whitespace-nowrap">
-                    {/* <colgroup>
-            <col className="w-5">
-            <col>
-            <col>
-            <col>
-            <col>
-            <col>
-            <col className="w-5">
-        </colgroup> */}
+                    <colgroup>
+                        <col className="w-5" />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col className="w-5" />
+                    </colgroup>
                     <thead>
                         <tr className="dark:dark:bg-gray-700">
                             <th className="p-3">A-Z</th>
