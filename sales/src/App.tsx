@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/main.scss';
@@ -9,26 +9,18 @@ import {
     useAppDispatch,
     useAppSelector,
 } from 'store/store';
-import UserCard from './components/UserCard';
-import Textbox from './components/Textbox';
-import Nav from './components/Nav';
+
+import MainLayout from './components/layouts/MainLayout';
 
 const Wrapper = () => {
     const { imgSrc, sales, salesActions } = useStore();
     console.log('imgSrc:', imgSrc);
-    let src = `${imgSrc}`;
-
-    // const dispatch = useAppDispatch();
-    // const [updateUserApi] = salesApi.useUpdateUserMutation();
-    // const [updateUserImageApi] = salesApi.useUpdateUserImageMutation();
-    // const [deleteUserImageApi] = salesApi.useDeleteUserImageMutation();
-
-    //const salesData: any = useAppSelector((state) => state.sales);
     console.log('salesData:', sales, salesActions);
+
     return (
-        <>
-            <Nav />
-            <div className="flex supports-[display:grid]:grid">
+        <Fragment>
+            <MainLayout />
+            {/* <div className="flex supports-[display:grid]:grid">
                 <div className="mt-10 text-3xl mx-auto max-w-6xl">
                     <div>Name: saleApp</div>
                     <div>Framework: react</div>
@@ -49,8 +41,8 @@ const Wrapper = () => {
                         <div className="text-clip text-ellipsis">ELLIPSIS</div>
                     </div>
                 </div>
-            </div>
-        </>
+            </div> */}
+        </Fragment>
     );
 };
 
