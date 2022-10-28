@@ -5,7 +5,7 @@ export default () => {
         <nav className="flex sm:justify-end space-x-4">
             {[
                 ['Dashboard', '/client/dashboard'],
-                ['Contacts', '/client/contacts'],
+                ['Orders', '/client/orders'],
                 ['Invoices', '/client/invoices'],
                 ['Products', '/client/products'],
                 ['Config', '/client/configs'],

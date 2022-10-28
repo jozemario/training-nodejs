@@ -22,6 +22,22 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
+            {
+                test: /\.(csv|tsv)$/i,
+                use: ['csv-loader'],
+            },
+            {
+                test: /\.xml$/i,
+                use: ['xml-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    publicPath: 'public',
+                },
+            },
+            { test: /\.xlsx$/, loader: 'webpack-xlsx-loader' },
         ],
     },
 };

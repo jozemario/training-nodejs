@@ -101,12 +101,16 @@ export default ({ rows, pageCount }) => {
         manualPagination: true,
         // getPaginationRowModel: getPaginationRowModel(), // If only doing manual pagination, you don't need this
         debugTable: true,
+        enableColumnResizing: true,
+        columnResizeMode: 'onChange',
+        debugHeaders: true,
+        debugColumns: true,
     });
 
     return (
-        <div className="p-2">
+        <div className="p-2 block max-w-full overflow-x-scroll overflow-y-hidden">
             <div className="h-2" />
-            <table>
+            <table className="w-full ">
                 <thead>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id}>

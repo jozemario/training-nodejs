@@ -3,6 +3,7 @@
 @tailwind utilities;
 @tailwind variants;
 
+
 @layer base {
   h1 {
     @apply text-2xl;
@@ -10,7 +11,7 @@
   h2 {
     @apply text-xl;
   }
-  table {
+  /* table {
     border: 1px solid lightgray;
   }
   
@@ -30,7 +31,7 @@
   
   tfoot th {
     font-weight: normal;
-  }
+  } */
  
 }
 
@@ -55,3 +56,4 @@
   }
   
 }
+

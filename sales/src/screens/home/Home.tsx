@@ -7,12 +7,12 @@ import { addToCart, useLoggedIn } from '../../schemas/cart.schema';
 
 import type { LocationGenerics } from '../../router';
 import PublicLayout from '../../components/layouts/PublicLayout';
-import HomeSection from '../../components/sections/section-buildit';
+import HomeSection from '../../components/sections/home';
 
 export default function Home() {
     const loggedIn = useLoggedIn();
-    const { products } = useMatch<LocationGenerics>().data;
-    console.log('Home: products:', products);
+    // const { products } = useMatch<LocationGenerics>().data;
+    // console.log('Home: products:', products);
     return (
         <PublicLayout>
             <HomeSection />

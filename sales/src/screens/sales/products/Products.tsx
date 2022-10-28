@@ -12,26 +12,51 @@ import ProductList from '../../../components/tables/ProductList';
 import BaseOrder from '../../../components/orders/BaseOrder';
 import { useStore } from 'store/store';
 import ProductCard from '../../../components/cards/ProductCard';
+import DataTable from '../../../components/tables/DataTable';
+import { GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import MaterialOrder from '../../../components/orders/MaterialOrder';
 
 export default function Products() {
     //const loggedIn = useLoggedIn();
     const { sales } = useStore();
-    console.log('Products:', sales.products);
+    const { products } = sales;
+    const columns: GridColDef[] = [
+        { field: 'id', headerName: 'ID', width: 70 },
+        { field: 'firstName', headerName: 'First name', width: 130 },
+        { field: 'lastName', headerName: 'Last name', width: 130 },
+        {
+            field: 'age',
+            headerName: 'Age',
+            type: 'number',
+            width: 90,
+        },
+        {
+            field: 'fullName',
+            headerName: 'Full name',
+            description: 'This column has a value getter and is not sortable.',
+            sortable: false,
+            width: 160,
+            valueGetter: (params: GridValueGetterParams) =>
+                `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+        },
+    ];
     return (
         <PrivateLayout>
             <section className="grid gap-6 text-center lg:grid-cols-2 xl:grid-cols-5">
-                <div className="w-full p-6 rounded-md sm:p-16 xl:col-span-2 bg-gray-900">
+                <div className="w-full p-1 rounded-md sm:p-16 xl:col-span-3 bg-gray-900">
                     <span className="block mb-2 text-violet-400">
                         Product List
                     </span>
-                    <ProductList rows={sales.products} pageCount={1} />
+                    {/* <ProductList rows={sales.products} pageCount={1} /> */}
+                    <DataTable rows={products.items} columns={columns} />
                 </div>
-                <div className="w-full p-6 rounded-md sm:p-16 xl:col-span-2 bg-gray-900">
+                <div className="w-full p-2 rounded-md sm:p-16 xl:col-span-2 bg-gray-900">
                     <span className="block mb-2 text-violet-400">
                         Product Detail
                     </span>
 
-                    <ProductCard />
+                    {/* <BaseOrder /> */}
+                    <MaterialOrder />
                 </div>
                 {/* <img
                     src="https://source.unsplash.com/random/480x360"

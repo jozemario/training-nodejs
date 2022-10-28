@@ -13,14 +13,12 @@ export const routes: Route[] = [
     {
         path: '/client/',
         import: () =>
-            import('./screens/home/homeModule').then(
-                (module) => module.default
-            ),
+            import('./screens/home/module').then((module) => module.default),
     },
     {
         path: '/client/dashboard/',
         import: () =>
-            import('./screens/sales/dashboard/dashboardModule').then(
+            import('./screens/sales/dashboard/module').then(
                 (module) => module.default
             ),
     },
@@ -30,7 +28,7 @@ export const routes: Route[] = [
             {
                 path: '/',
                 import: () =>
-                    import('./screens/sales/products/productsModule').then(
+                    import('./screens/sales/products/module').then(
                         (module) => module.default
                     ),
             },
@@ -43,11 +41,23 @@ export const routes: Route[] = [
             // },
         ],
     },
-    // {
-    //     path: 'cart',
-    //     element: () =>
-    //         import('./screens/sales/cart').then((module) => <module.default />),
-    // },
+    {
+        path: 'client/orders',
+        children: [
+            {
+                path: '/',
+                import: () =>
+                    import('./screens/sales/orders/module').then(
+                        (module) => module.default
+                    ),
+            },
+            // {
+            //     path: 'cart',
+            //     element: () =>
+            //         import('./screens/sales/cart').then((module) => <module.default />),
+            // },
+        ],
+    },
 ];
 
 export type LocationGenerics = MakeGenerics<{

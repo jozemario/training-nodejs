@@ -55,8 +55,9 @@ module.exports = {
             stone: colors.stone,
         },
         fontFamily: {
-            sans: ['Graphik', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
+            sans: ['Roboto', 'sans-serif'],
+            //sans: ['Graphik', 'sans-serif'],
+            //serif: ['Merriweather', 'serif'],
         },
         extend: {
             spacing: {
