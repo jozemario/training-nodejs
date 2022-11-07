@@ -2,6 +2,31 @@ const NextFederationPlugin = require('@module-federation/nextjs-mf/lib/NextFeder
 const { dependencies } = require('./package.json');
 
 module.exports = {
+    crossOrigin: 'anonymous',
+    async headers() {
+        return [
+            {
+                // matching all API routes
+                source: '/:path*',
+                //source: '/api/:path*',
+                headers: [
+                    { key: 'Access-Control-Allow-Credentials', value: 'true' },
+                    {
+                        key: 'Access-Control-Allow-Origin',
+                        value: 'http://localhost:3004/',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Methods',
+                        value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Headers',
+                        value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+                    },
+                ],
+            },
+        ];
+    },
     webpack(config, options) {
         if (!options.isServer) {
             config.plugins.push(

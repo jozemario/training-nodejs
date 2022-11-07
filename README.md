@@ -71,8 +71,26 @@ localhost:3000 (XSHELL)
 localhost:3001 (STANDALONE REMOTE1)
 localhost:3002 (STANDALONE REMOTE2)
 localhost:3003 (STANDALONE STORE)
+localhost:3004 (STANDALONE SALES)
 ```
 </p>
 </details>
 
 
+<details><summary>Notes</summary>
+<p>
+
+#### Developer notes
+```
+# Create new micro front.
+npx create-mf-app
+
+yarn 
+# Build the packages
+yarn build
+# Run to start the servers
+yarn start
+
+```
+</p>
+</details>
